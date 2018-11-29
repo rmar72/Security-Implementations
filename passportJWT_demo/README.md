@@ -6,7 +6,12 @@ Run the app and see how JWTs are generated and used from the client to get back 
 
 Within Index.js you'll find the setup code for passport-jwt, express, routes, as well as a mock db (premade users). 
 
-jwt_vanilla.js is a file that has 3 different ways of making ajax calls handling our token, 1. XMLHttpRequest, 2. es6 fetch, 3. async/await+fetch. Feel free to uncomment/swap out functionality to see the code accomplish the same goal but in 3 different ways.
+jwt_vanilla.js is a file that has 3 different ways of making ajax calls for handling our token, 
+  1. XMLHttpRequest, 
+  2. es6 fetch, 
+  3. async/await+fetch.
+  
+Feel free to uncomment/swap out functionality to see the code accomplish the same goal but in 3 different ways.
 
 
 |

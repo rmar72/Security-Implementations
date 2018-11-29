@@ -1,4 +1,5 @@
 This demo makes use of passportJwt and some light vanilla JS
+
 Run the app and see how JWTs are generated and used from the client to get back a secret from the server
 
 **Heads Up - this is a demo with the sole purpose to generate JWTs and send them back to the server to retrieve a secret. This does not
@@ -24,5 +25,5 @@ into one of the following tools:
  - http://kinolien.github.io/gitzip/
 
 
-The following link contains Postman documentation I wrote for each route, if you'd like access shoot me a msg at rsolm72@gmail.com
+Also, the following link contains Postman documentation I wrote for each route, if you'd like access shoot me a msg at rsolm72@gmail.com
 https://riversun.postman.co/collections/3434701-658e87e6-bf40-4f2d-8eb5-251abb4d5bda?workspace=da6a5c73-4f7e-491b-8dea-0ec41c85d6a0

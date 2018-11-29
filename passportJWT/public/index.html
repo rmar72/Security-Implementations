@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON web token with vanilla js</title>
+</head>
+<body>
+
+  <div>
+      <div>
+        <h4>Testing PassportJWT</h4>
+        <label for="username">user name:</label>
+        <input id="username">
+        <label for="password">password:</label>
+        <input id="password" type="password">
+        <button onclick="getToken()">login</button>
+      </div>
+
+      <div>
+        <p>Token:</p>
+        <p id="token-holder"></p>
+        <button onclick="getSecret()">get secret message</button>
+        <div id="result"></div>
+      </div>
+  </div>
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <hr/>
+
+  <div>
+    <h4>Client Photo Uploader for no reason</h4>
+    <input type="file" onchange="previewFile()"><br>
+    <img src="" height="200" alt="Image preview...">
+  </div>
+
+  <script src="jwt_vanilla.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-This demo makes use of passportJwt and some light vanilla JS
+This demo makes use of node.js with passport-jwt and some light vanilla JS
 
 Run the app and see how JWTs are generated and used from the client to get back a secret from the server
 

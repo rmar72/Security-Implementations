@@ -45,41 +45,71 @@
 // }
 
 // ---------------------------------------------------------------------------------- es6 fetch 
-function getToken(){
-    var url = "http://localhost:2018/login";
-    var userElement = document.getElementById('username');
-    var passwordElement = document.getElementById('password');
-    var tokenElement = document.getElementById('token-holder');
-    var user = userElement.value;
-    var password = passwordElement.value;
-    var data = {name: user, password: password};
+// function getToken(){
+//     var url = "http://localhost:2018/login";
+//     var userElement = document.getElementById('username');
+//     var passwordElement = document.getElementById('password');
+//     var tokenElement = document.getElementById('token-holder');
+//     var user = userElement.value;
+//     var password = passwordElement.value;
+//     var data = {name: user, password: password};
 
-    fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers:{
-            'Content-Type': 'application/json; charset=UTF-8',
-        }
-    }).then(res => res.json())
-    .then(response =>  {
-        tokenElement.innerHTML = response.token;
-        console.log('Success:', JSON.stringify(response) );      
-    })
-    .catch(error => console.error('Error:', error));
-}
+//     fetch(url, {
+//         method: 'POST',
+//         body: JSON.stringify(data),
+//         headers:{
+//             'Content-Type': 'application/json; charset=UTF-8',
+//         }
+//     }).then(res => res.json())
+//     .then(response =>  {
+//         tokenElement.innerHTML = response.token;
+//         console.log('Success:', JSON.stringify(response) );      
+//     })
+//     .catch(error => console.error('Error:', error));
+// }
     
-function getSecret(){
-    var url = "http://localhost:2018/secret";
-    var tokenElement = document.getElementById('token-holder');
+// function getSecret(){
+//     var url = "http://localhost:2018/secret";
+//     var tokenElement = document.getElementById('token-holder');
 
-    fetch(url, {
-        method: 'GET',
+//     fetch(url, {
+//         method: 'GET',
+//         headers:{
+//             'Authorization': `bearer ${tokenElement.innerHTML}`
+//         }
+//     }).then(res => res.json())
+//     .then(response => console.log('Success:', response))
+//     .catch(error => console.error('Error:', error)); 
+// }
+
+// ---------------------------------------------------------------------------------- async/await + fetch
+async function getToken(){
+    const userData = {
+        name: document.getElementById('username').value,
+        password: document.getElementById('password').value
+    }
+    const res = await fetch('http://localhost:2018/login', {
+        method: 'POST',
+        body: JSON.stringify(userData),
         headers:{
+            'Content-Type': 'application/json; charset=UTF-8'
+        }
+    });
+    //console.log("res", res) // Locked Response, cant read the data until resolved but headers will show http status
+
+    const data = await res.json(); //resolving json data
+    document.getElementById('token-holder').innerHTML = data.token
+}
+
+async function getSecret(){
+    const tokenElement = document.getElementById('token-holder');
+    const res = await fetch('http://localhost:2018/secret', {
+        headers :{
             'Authorization': `bearer ${tokenElement.innerHTML}`
         }
-    }).then(res => res.json())
-    .then(response => console.log('Success:', response))
-    .catch(error => console.error('Error:', error)); 
+    });
+    const data = await res.json();
+    console.log(data);
 }
 
 ///////// uploading file

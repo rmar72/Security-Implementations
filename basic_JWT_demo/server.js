@@ -51,7 +51,7 @@ app.get('/', (req, res) =>
 // get an instance of the router for api routes
 // ---------------------------------------------------------
 
-var apiRoutes = express.Router(); 
+const apiRoutes = express.Router();
 app.use('/api', apiRoutes);
 
 // ---------------------------------------------------------
@@ -59,7 +59,6 @@ app.use('/api', apiRoutes);
 // ---------------------------------------------------------
 // http://localhost:8080/api/authenticate
 apiRoutes.post('/authenticate', (req, res) => {
-
 	// find the user
 	User.findOne({ name: req.body.name }, (err, user) => {
 		if (err) throw err;
@@ -67,15 +66,13 @@ apiRoutes.post('/authenticate', (req, res) => {
 		if (!user) {
 			res.json({ success: false, message: 'Authentication failed. User not found.' });
 		} else if (user) {
-
+			const { password, admin } = user;
 			// check if password matches
-			if (user.password != req.body.password) {
+			if (password != req.body.password) {
 				res.json({ success: false, message: 'Authentication failed. Wrong password.' });
 			} else {
 				// if user is found and password is right, create a token
-				const payload = {
-					admin: user.admin	
-				}
+				const payload = { admin	};
 				const token = jwt.sign(payload, app.get('superSecret'), {
 					expiresIn: 86400 // expires in 24 hours
 				});

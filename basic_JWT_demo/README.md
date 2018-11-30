@@ -1,6 +1,6 @@
 # A few words on my behalf
 
-This demo is the works of Nick Cerminara, I found it on [scotch.io](https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens)
+This demo is the works of Chris Sevilleja, I found it on [scotch.io](https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens)
 
 I liked the idea of implementing JWT without passport, so that is the reason behind pushing this up as
 a valid implementation in my book. FYI I did make a few modifications to the code but nothing drastic.
@@ -8,7 +8,7 @@ a valid implementation in my book. FYI I did make a few modifications to the cod
 **Heads Up - basic demo with the sole purpose to generate JWTs and access different routes on the server. Technologies used are: 
 jwt, mongoose and it does not cover password encryption nor does it include views to interact from a browser. I suggest using Postman, a Node client, [cUrl](https://curl.haxx.se/), or [httpie](https://httpie.org/)**
 
-And with that I leave you to the original doc for this demo, thanks for the contribution Nick!
+And with that I leave you to the original doc for this demo, thanks for the contribution Chris!
 
 |
 

@@ -1,6 +1,6 @@
 # A few words on my behalf
 
-This demo is the works of Chris Sevilleja, I found it on [scotch.io](https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens)
+This demo is the works of Chris Sevilleja, found on [scotch.io](https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens) All credit & kudos!
 
 I liked the idea of implementing JWT without passport, so that is the reason behind pushing this up as
 a valid implementation in my book. FYI I did make a few modifications to the code but nothing drastic.

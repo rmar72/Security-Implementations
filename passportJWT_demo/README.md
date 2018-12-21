@@ -1,17 +1,21 @@
-This demo makes use of node.js with passport-jwt and some light vanilla JS
+Download & run the app to see how JWTs are generated & used from the client to access user-authenticated data 🔒 🔑
 
-Run the app and see how JWTs are generated and used from the client to get back a secret from the server
+**🚧⚠️ Heads Up ⚠️ 🚧- this is a very basic demo with the sole purpose to generate JWTs and send them back to the server to retrieve a secret. This does not cover setting up a DB, password encryption, nor how to store the JWT in the client. Actually, for demo purposes I render the token to a paragraph element, this is by no means standard practice on how to handle a token on a client.**
 
-**Heads Up - this is a very basic demo with the sole purpose to generate JWTs and send them back to the server to retrieve a secret. This does not cover setting up a DB, password encryption, nor how to store the JWT in the client. Actually, for demo purposes I render the token to a paragraph element, this is by no means standard practice on how to handle a token on a client.**
+## - App Stack -
+##### Back End:
+- node.js + passport-jwt module
+##### Front End:
+- HTML + light vanilla JS
 
 Within Index.js you'll find the setup code for passport-jwt, express, routes, as well as a mock db (premade users). 
 
-jwt_vanilla.js is a file that has 3 different ways of making ajax calls for handling our token, 
+jwt_vanilla.js - equipped with 3 different options of making ajax calls for handling our token, 
   1. XMLHttpRequest, 
   2. es6 fetch, 
   3. async/await+fetch.
   
-Feel free to uncomment/swap out functionality to see the code accomplish the same goal but in 3 different ways.
+Feel free to uncomment/swap out functionality to see the code accomplish the same goal but in 3 different ways
 
 
 |

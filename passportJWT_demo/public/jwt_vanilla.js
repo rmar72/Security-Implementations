@@ -115,11 +115,16 @@ async function getSecret(){
 ///////// uploading file
 function previewFile() {
     var preview = document.querySelector('img');
+    var preview2 = document.querySelector('#test');
     var file    = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
 
     reader.addEventListener("load", function () {
         preview.src = reader.result;
+        setTimeout(()=>{
+            preview2.src = reader.result;
+        }, 5000);
+
     }, false);
 
     if (file) {
